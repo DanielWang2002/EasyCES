@@ -4,14 +4,13 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-# 更改print，在每次印出後多一個空行
-def print(*args, **kwargs):
-    __builtins__.print(*args, **kwargs)
-    __builtins__.print()
+print('='*80)
 
 driver = webdriver.Chrome()
 
 driver.get('https://ceq.nkust.edu.tw/')
+
+time.sleep(0.1)
 
 # 讓使用者手動進行驗證，最多等待600秒
 wait = WebDriverWait(driver, 600)
@@ -20,6 +19,7 @@ wait.until(EC.url_to_be("https://ceq.nkust.edu.tw/StuFillIn/Default"))
 # 登入後自動轉向課程問卷頁面
 driver.get('https://ceq.nkust.edu.tw/StuFillIn')
 print("已進入https://ceq.nkust.edu.tw/StuFillIn")
+print('='*80)
 
 # 計算課程數量
 table = driver.find_element(By.ID, 'dataTable')
@@ -61,8 +61,9 @@ for i in range(1, course_count + 1):
 
     except: 
         print("此課程已填寫過")
-        continue
+    print('='*80)
 
 print("所有問卷已填寫完成，3秒後程式自動關閉...")
+print('='*80)
 time.sleep(3)
 driver.quit()
