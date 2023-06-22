@@ -16,7 +16,7 @@ pip install selenium
 如果要自動辨識的話，現有的方法幾乎都要錢，例如`2Captcha`或`YesCaptcha`  
 所以這邊我設計成讓使用者手動登入後再自動執行填寫問卷
 
-- 輸入學號、密碼以及reCaptcha的驗證完成後登入網站
+- 輸入`學號`、`密碼`以及完成`reCaptcha的驗證`完成後登入網站
 - 程式會自動將網站導向[https://ceq.nkust.edu.tw/StuFillIn](https://ceq.nkust.edu.tw/StuFillIn)並開始填寫問卷，如果有已經填過的問卷也會略過
 
 ### 需要注意以下幾點
