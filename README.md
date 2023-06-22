@@ -9,6 +9,7 @@
 ### 安裝Selenium
 ```
 pip install selenium
+pip install webdriver_manager
 ```
 
 ### 執行
