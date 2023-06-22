@@ -3,10 +3,15 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
+
+s = Service(ChromeDriverManager().install())
+option = webdriver.ChromeOptions()
+option.add_experimental_option("detach", True)
+driver = webdriver.Chrome(service=s, options=option)
 
 print('='*80)
-
-driver = webdriver.Chrome()
 
 driver.get('https://ceq.nkust.edu.tw/')
 
